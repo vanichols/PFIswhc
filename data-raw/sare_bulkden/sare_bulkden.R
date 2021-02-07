@@ -36,30 +36,10 @@ datraw <-
 
 # soil data ---------------------------------------------------------------
 
-dat_soil <-
+sare_bulkden <-
   datraw %>%
-  select(code, soilvol_cm3, drysoil_g, bulkden_gcm3)
+  select(plot_id, soilvol_cm3, drysoil_g, bulkden_gcm3)
 
-# porosity ----------------------------------------------------------------
+sare_bulkden %>% write_csv("data-raw/sare_bulkden/sare_bulkden.csv")
 
-# via britt and mineral methods
-
-dat_poros <-
-  datraw %>%
-  # calc porosity via britt
-  mutate(
-    soil_at_sat_g = (satsamp_g - ringpluscrap_g),
-    water_at_sat_g = soil_at_sat_g - drysoil_g,
-    air_cm3 = water_at_sat_g,
-    poros_britt = air_cm3/soilvol_cm3,
-    poros_mineral = 1 - bulkden_gcm3/myminden
-    ) %>%
-  select(code, drysoil_g, bulkden_gcm3,
-         water_at_sat_g, air_cm3, poros_britt, poros_mineral)
-
-#--look at it
-dat_poros  %>%
-  ggplot(aes(poros_mineral, poros_britt)) +
-  geom_point() +
-  geom_abline()
-
+use_data(sare_bulkden, overwrite = T)

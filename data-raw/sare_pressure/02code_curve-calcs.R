@@ -151,8 +151,9 @@ dat_theta %>%
 
 sare_pressure <-
   dat_theta %>%
-  rename(vtheta_poros1 = vtheta2a,
-         vtheta_poros2 = vtheta2b)
+  rename("vtheta_grav" = vtheta1,
+         "vtheta_mnrl" = vtheta2b) %>%
+  select(plot_id, press_cm, vtheta_grav, vtheta_mnrl)
 
 sare_pressure %>% write_csv("data-raw/sare_pressure/sare_pressure.csv")
 
