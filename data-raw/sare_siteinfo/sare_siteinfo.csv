@@ -1,0 +1,4 @@
+site,field_id,lat,lon,county,site_desc
+East,East,41.32,-91.72,Washington,"Corn grain/soybean rotation, one field with 4 replicated treatments of cc/no"
+West,West,41.95,-94.34,Greene,"Corn grain/soybean rotation, one field with 4 replicated treatments of cc/no"
+Central,Central42,42,-93.8,Boone,"Both corn grain/soybean and corn silage/soybean rotations, field 42 was all soybean in 2019, 4 replicated treatments of cc/no in each system"
