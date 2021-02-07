@@ -24,8 +24,7 @@ sare_siteinfo <-
       site_name == "Central" ~ "Both corn grain/soybean and corn silage/soybean rotations, field 42 was all soybean in 2019, 4 replicated treatments of cc/no in each system"
       )
     ) %>%
-    rename("site" =  site_name) %>%
-    select(site, field_id, lat, lon, county, site_desc)
+    select(field_id, site_name, lat, lon, county, site_desc)
 
 
 sare_siteinfo %>%
