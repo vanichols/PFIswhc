@@ -22,27 +22,35 @@ rm(list = ls())
 library(readxl)
 library(readr)
 library(dplyr)
+library(tidyr)
+library(stringr)
+
+
+
+# plotkey -----------------------------------------------------------------
+
+plotkey <- read_csv("data-raw/sare_plotkey/sare_plotkey.csv")
 
 # read in excel sheets -----------------------------------------------------
 
 stout <-
-  read_excel("data-raw/raw-data/rd_pressure-cell-msmts.xlsx", sheet = "Stout", skip = 1) %>%
+  read_excel("data-raw/sare_pressure/rd_pressure-cell-msmts.xlsx", sheet = "Stout", skip = 1) %>%
   filter(!is.na(code))
 
 funcke <-
-  read_excel("data-raw/raw-data/rd_pressure-cell-msmts.xlsx", sheet = "Funcke", skip = 1) %>%
+  read_excel("data-raw/sare_pressure/rd_pressure-cell-msmts.xlsx", sheet = "Funcke", skip = 1) %>%
   select(-orig_code) %>%
   filter(!is.na(code)) %>%
   mutate(atm1 = as.numeric(atm1))
 
 boydgr <-
-  read_excel("data-raw/raw-data/rd_pressure-cell-msmts.xlsx", sheet = "Boydgrain", skip = 1) %>%
+  read_excel("data-raw/sare_pressure/rd_pressure-cell-msmts.xlsx", sheet = "Boydgrain", skip = 1) %>%
   filter(!is.na(code)) %>%
   mutate_at(vars(contains("cm")), as.numeric) %>%
   mutate_at(vars(contains("_g")), as.numeric)
 
 boydsil <-
-  read_excel("data-raw/raw-data/rd_pressure-cell-msmts.xlsx", sheet = "Boydsilage", skip = 1) %>%
+  read_excel("data-raw/sare_pressure/rd_pressure-cell-msmts.xlsx", sheet = "Boydsilage", skip = 1) %>%
   filter(!is.na(code)) %>%
   mutate_at(vars(contains("cm")), as.numeric) %>%
   mutate_at(vars(contains("_g")), as.numeric) %>%
@@ -63,10 +71,28 @@ boydsil2 <-
   filter(code != "B42-p28")
 
 
-# write to tidy data ------------------------------------------------------
-sare_rawpresscells <- bind_rows(stout, funcke2, boydgr, boydsil2)
+dat <- bind_rows(stout, funcke2, boydgr, boydsil2)
+
+#--need to make codes the same as plotkey
+
+sare_rawpresscells <-
+  dat %>%
+  separate(code, into = c("field_id", "x")) %>%
+  mutate(field_id = case_when(
+    field_id == "St" ~ "East",
+    field_id == "B42" ~ "Central42",
+    field_id == "F" ~ "West"),
+    plot = case_when(
+      (field_id == "East")|(field_id == "West") ~ str_sub(x, 1, 1),
+      field_id == "Central42" ~ str_trim(str_sub(x, 2, 3))
+    )
+  ) %>%
+  mutate(plot = as.numeric(plot)) %>%
+  left_join(plotkey) %>%
+  select(plot_id, satsamp_g:ring_g)
+
 
 sare_rawpresscells %>%
-  write_csv("data-raw/sare_rawpresscells.csv")
+  write_csv("data-raw/sare_pressure/sare_rawpresscells.csv")
 
 use_data(sare_rawpresscells, overwrite = T)

@@ -1,4 +1,4 @@
-code,satsamp_g,satwater_g,cell_nu,cylinder_g,atm,10_cm,25_cm,50_cm,100_cm,200_cm,500_cm,sampafter500_g,drysoil_g,ringpluscrap_g,ring_g
+plot_id,satsamp_g,satwater_g,cell_nu,cylinder_g,atm,10_cm,25_cm,50_cm,100_cm,200_cm,500_cm,sampafter500_g,drysoil_g,ringpluscrap_g,ring_g
 St-1no,859.17,4.39,1a,46.14,48.87,48.49,53.77,49.22,50.22,50.82,49.51,824.41,526,168,164
 St-3no,879.55,4.68,2a,46.14,50.73,51.6,57.38,49.29,49.21,50.06,46.48,805.48,532,170,164
 St-5no,847.55,3.26,3a,46.1,50.22,50.63,56.86,49.6,49.36,50.02,49.12,809.56,512,170,164
