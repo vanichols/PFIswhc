@@ -26,7 +26,7 @@ library(dplyr)
 
 # read in data -----------------------------------------------------
 
-key <- read_csv("data-raw/sare_eus/rd_euIDs.csv")
+key <- read_csv("data-raw/sare_plotkey/rd_euIDs.csv")
 
 sare_plotkey <-
   key %>%
@@ -41,9 +41,9 @@ sare_plotkey <-
            sys_trt == "sil" ~ "silage",
            sys_trt == "gr" ~ "grain"
          )) %>%
-  rename("plot_id" = code, "field_id" = site_name) %>%
-  select(plot_id, site, field_id, sys_trt, crop_trt, cc_trt, rep, plot, plot_id)
+  rename("plot_id" = code, "field_id" = site_name, "site_name" = site) %>%
+  select(plot_id, field_id, site_name, sys_trt, crop_trt, cc_trt, rep, plot, plot_id)
 
-sare_plotkey %>% write_csv("data-raw/sare_eus/sare_plotkey.csv")
+sare_plotkey %>% write_csv("data-raw/sare_plotkey/sare_plotkey.csv")
 
 use_data(sare_plotkey, overwrite = T)
