@@ -23,11 +23,13 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 library(ggplot2)
+library(stringr)
 
 # read in data -----------------------------------------------------
 
 plotkey <- read_csv("data-raw/sare_plotkey/sare_plotkey.csv")
 
+#note: rings are 3 inch diameter, and 3 inches tall (7.62 cm)
 datraw <-
   read_csv("data-raw/sare_pressure/sare_rawpresscells.csv") %>%
   mutate(soilvol_cm3 = 347.5,
@@ -120,6 +122,7 @@ dat_cum %>%
   ggplot(aes(press_cm, cumwater_g, color = plot_id)) +
   geom_line()
 
+
 # convert this water amount to a volumetric/gravimetric water content
 dat_theta <-
   dat_cum %>%
@@ -158,3 +161,19 @@ sare_pressure <-
 sare_pressure %>% write_csv("data-raw/sare_pressure/sare_pressure.csv")
 
 use_data(sare_pressure, overwrite = T)
+
+
+#--find gallons, for blog post
+sare_gallons <-
+  dat_cum %>%
+  left_join(dat_poros) %>%
+  mutate(
+    water_inside_soil_still = water_at_sat_g - cumwater_g) %>%
+  select(plot_id, press_cm, water_inside_soil_still) %>%
+  mutate(gal_cm3 = water_inside_soil_still * (1/347.5) * (1/3785.41),
+         gal_3inac = gal_cm3 * (10000) * (4046.86)) %>%
+  select(plot_id, press_cm, gal_3inac)
+
+sare_gallons %>% write_csv("data-raw/sare_pressure/sare_gallons.csv")
+
+use_data(sare_gallons, overwrite = T)
