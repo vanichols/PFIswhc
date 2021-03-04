@@ -24,6 +24,8 @@ library(tidyr)
 library(readxl)
 library(ggplot2)
 library(stringr)
+library(readr)
+library(usethis)
 
 # read in data -----------------------------------------------------
 
@@ -150,10 +152,13 @@ dat_theta %>%
 
 # so vetha1 and vtheta2a are the same
 
-#--write final values to data frame
 
+
+#--write final values to data frame
+#--change 0 pressure to half core height (true pressure)
 sare_pressure <-
   dat_theta %>%
+  mutate(press_cm = ifelse(press_cm ==0, 0.038, press_cm)) %>%
   rename("vtheta_grav" = vtheta1,
          "vtheta_mnrl" = vtheta2b) %>%
   select(plot_id, press_cm, vtheta_grav, vtheta_mnrl)
@@ -161,6 +166,10 @@ sare_pressure <-
 sare_pressure %>% write_csv("data-raw/sare_pressure/sare_pressure.csv")
 
 use_data(sare_pressure, overwrite = T)
+
+
+
+# separate, gallons -------------------------------------------------------
 
 
 #--find gallons, for blog post
