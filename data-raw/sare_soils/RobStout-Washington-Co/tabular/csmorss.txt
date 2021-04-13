@@ -1,0 +1,8 @@
+"Linear"|"Linear"|"31443012"|"18388643"
+"Linear"|"Concave"|"31443015"|"18388644"
+"Concave"|"Concave"|"31443010"|"18388642"
+"Linear"|"Linear"|"31442848"|"18388558"
+"Linear"|"Linear"|"31442845"|"18388557"
+"Concave"|"Concave"|"31442849"|"18388559"
+"Concave"|"Concave"|"31442752"|"18388479"
+"Concave"|"Concave"|"31442751"|"18388478"

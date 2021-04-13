@@ -1,0 +1,5 @@
+"Climate Factor Area (USLE)"|"10"|"Climate Factor"|367200|"32529"|"465214"
+"County or Parish"|"IA015"|"Boone"|367200|"32529"|"465215"
+"MLRA"|"103"|"Central Iowa and Minnesota Till Prairies"|367200|"32529"|"465216"
+"Rainfall Factor Area (USLE)"|"175"|"Rainfall Factor"|367200|"32529"|"465217"
+"State or Territory"|"IA"|"Iowa"|367200|"32529"|"465218"

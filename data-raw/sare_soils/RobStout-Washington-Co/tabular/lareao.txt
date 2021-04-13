@@ -1,0 +1,5 @@
+"Climate Factor Area (USLE)"|"8"|"Climate Factor"|365200|"13735"|"467866"
+"County or Parish"|"IA183"|"Washington"|365200|"13735"|"467867"
+"MLRA"|"108C"|"Illinois and Iowa Deep Loess and Drift, West-Central Part"|365200|"13735"|"467868"
+"Rainfall Factor Area (USLE)"|"175"|"Rainfall Factor"|365200|"13735"|"467869"
+"State or Territory"|"IA"|"Iowa"|365200|"13735"|"467870"

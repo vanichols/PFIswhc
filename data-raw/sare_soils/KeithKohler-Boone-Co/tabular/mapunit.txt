@@ -1,0 +1,4 @@
+"135"|"Coland clay loam, 0 to 2 percent slopes, occasionally flooded"|"Consociation"||6564|||||||"Prime farmland if drained"|||||"Order 2"|76|||||"32529"|"2550234"
+"485"|"Spillville loam, 0 to 2 percent slopes, occasionally flooded"|"Consociation"||963|||||||"All areas are prime farmland"|||||"Order 2"|88|||||"32529"|"2550271"
+"L138B"|"Clarion loam, Bemis moraine, 2 to 6 percent slopes"|"Consociation"||48216|||||||"All areas are prime farmland"|||||"Order 2"|88|||||"32529"|"2765522"
+"L55"|"Nicollet loam, 1 to 3 percent slopes"|"Consociation"||33568|||||||"All areas are prime farmland"|||||"Order 2"|91|||||"32529"|"2834849"

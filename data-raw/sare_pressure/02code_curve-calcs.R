@@ -46,7 +46,7 @@ datraw <-
 dat_water <-
   datraw %>%
     mutate(   ##--# calc actual amount of water released at each pressure
-    w_0cm_g = 0, ##-britt adds this to 2.5 atm value, keep a 0 as a place-holder
+    #w_0cm_g = 0, ##-britt adds this to 2.5 atm value, keep a 0 as a place-holder #--changed mind, eliminate it 4/12
     w_2.5cm_g = atm - cylinder_g + satwater_g,
     w_10cm_g = `10_cm` - cylinder_g,
     w_25cm_g = `25_cm` - cylinder_g,
@@ -106,7 +106,7 @@ dat_cum <-
   dat_water %>%
   select(-w_999cm_g) %>%
   # gather into long form
-  pivot_longer(w_0cm_g:w_500cm_g,
+  pivot_longer(w_2.5cm_g:w_500cm_g,
                names_to = "press_cm",
                values_to = "water_g") %>%
   separate(press_cm,

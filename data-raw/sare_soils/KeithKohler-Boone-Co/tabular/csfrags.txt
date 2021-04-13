@@ -1,0 +1,8 @@
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344224"|"4264386"
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344225"|"4264387"
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344220"|"4264382"
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344221"|"4264383"
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344050"|"4264245"
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344067"|"4264255"
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344068"|"4264256"
+0|0|0.01||||"Mixed rock fragments"|2|39|75|"Nonflat"|"Subrounded"|"Indurated"|"20344069"|"4264257"

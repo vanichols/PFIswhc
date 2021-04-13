@@ -1,0 +1,3 @@
+"Non-MLRA Soil Survey Area"|"IA183"|"Washington County, Iowa"||11/01/1983 00:00:00|"certified, major components"|06/10/2020 13:48:10|"The ""fts4"" Ackmore silt loam, 0 to 2 percent slopes map unit was updated to ""2yvjt"" Ackmore silt loam, 0 to 2 percent slopes, occasionally flooded map unit through the EVAL - MLRA 108C - Ackmore silt loam, 0 to 2 percent slopes, occasionally flooded project.
+
+The ""fts6"" Lawson silt loam, 0 to 2 percent slopes map unit was updated to ""2yvk0"" Lawson silt loam, 0 to 2 percent slopes, occasionally flooded map unit through the EVAL - MLRA 108C - Lawson silt loam, 0 to 2 percent slopes, occasionally flooded project."|"13735"|"72897"|"72799"
