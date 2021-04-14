@@ -1,3 +1,4 @@
-site_name,wgt_slope,wgt_wtcm
-Central,2.76,100.26
-East,0.99,0
+site_name,wgt_slope,wgt_wtcm,dom_mu
+Central,2.76,100.26,"Clarion loam, Bemis moraine, 2 to 6 percent slopes"
+East,0.99,0,"Taintor silty clay loam, 0 to 2 percent slopes"
+West,2.07,67.05,"Nicollet loam, 1 to 3 percent slopes"

@@ -1,2 +1,5 @@
-wgt_slope,wgt_wtcm
-2.76,100.26
+site_name,wgt,muname,slopegradwta,wtdepannmin
+Central,0.5398663098610473,"Clarion loam, Bemis moraine, 2 to 6 percent slopes",3.5,150
+Central,0.37585515781930556,"Nicollet loam, 1 to 3 percent slopes",2.1,50
+Central,0.0734959859367827,"Coland clay loam, 0 to 2 percent slopes, occasionally flooded",1,0
+Central,0.010782546382864373,"Spillville loam, 0 to 2 percent slopes, occasionally flooded",1,45

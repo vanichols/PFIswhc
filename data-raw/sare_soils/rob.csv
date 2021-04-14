@@ -1,2 +1,4 @@
-wgt_slope,wgt_wtcm
-0.99,0
+site_name,wgt,muname,slopegradwta,wtdepannmin
+East,0.689225393127548,"Taintor silty clay loam, 0 to 2 percent slopes",1,0
+East,0.29327315084449623,"Kalona silty clay loam, 0 to 2 percent slopes",1,0
+East,0.017501456027955737,"Sperry silt loam, depressional, 0 to 1 percent slopes",0.5,0

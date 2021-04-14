@@ -1,0 +1,5 @@
+"Climate Factor Area (USLE)"|"15"|"Climate Factor"|366300|"13674"|"467261"
+"County or Parish"|"IA073"|"Greene"|366300|"13674"|"467262"
+"MLRA"|"103"|"Central Iowa and Minnesota Till Prairies"|366300|"13674"|"467263"
+"Rainfall Factor Area (USLE)"|"175"|"Rainfall Factor"|366300|"13674"|"467264"
+"State or Territory"|"IA"|"Iowa"|366300|"13674"|"467265"

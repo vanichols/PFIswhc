@@ -62,11 +62,8 @@ wtab_dat <-
 keith <-
   mu_dat %>%
   left_join(wtab_dat) %>%
-  mutate(wgt_slope = wgt*slopegradwta,
-         wgt_wt = wgt*wtdepannmin) %>%
-  summarise(wgt_slope = sum(wgt_slope),
-            wgt_wtcm = sum(wgt_wt)) %>%
-  mutate_all(round, 2)
+  mutate(site_name = "Central") %>%
+  select(site_name, wgt, muname, slopegradwta, wtdepannmin)
 
 keith %>%  write_csv("data-raw/sare_soils/keith.csv")
 
@@ -119,41 +116,36 @@ wtab_dat <-
 rob <-
   mu_dat %>%
   left_join(wtab_dat) %>%
-  mutate(wgt_slope = wgt*slopegradwta,
-         wgt_wt = wgt*wtdepannmin) %>%
-  summarise(wgt_slope = sum(wgt_slope),
-            wgt_wtcm = sum(wgt_wt)) %>%
-  mutate_all(round, 2)
+  mutate(site_name = "East") %>%
+  select(site_name, wgt, muname, slopegradwta, wtdepannmin)
 
 rob %>% write_csv("data-raw/sare_soils/rob.csv")
 
 
 #### JIM ########################################################################################
 
-######### WAITING ON CROSS STREET INFO ##################
 
 # visualilze, correct? ----------------------------------------------------
 
-srgo_shp <- st_read("data-raw/sare_soils/RobStout-Washington-Co/spatial/soilmu_a_aoi.shp") %>%
+srgo_shp <- st_read("data-raw/sare_soils/JimFunke-Greene-Co/spatial/soilmu_a_aoi.shp") %>%
   clean_names() #--again, people who make spatial data like all upper-case, this just fixes that
 
 ggplot() +
   geom_sf(data = srgo_shp, aes(fill = musym)) +
-  labs(title = "Rob, Washington Co")
+  labs(title = "Jim, Greene Co")
 
-ggsave("data-raw/sare_soils/fig_rob-soils.png")
+ggsave("data-raw/sare_soils/fig_jim-soils.png")
 
 # Spatial_Domain:
 #   Bounding_Coordinates:
-#   West_Bounding_Coordinate: -91.947
-# East_Bounding_Coordinate: -91.484
-# North_Bounding_Coordinate: 41.512
-# South_Bounding_Coordinate: 41.161
-
+#   West_Bounding_Coordinate: -94.630
+# East_Bounding_Coordinate: -94.164
+# North_Bounding_Coordinate: 42.210
+# South_Bounding_Coordinate: 41.863
 
 # get map unit names and amounts ------------------------------------------
 
-mu_datraw <- read.table("data-raw/sare_soils/RobStout-Washington-Co/tabular/mapunit.txt", header = F, sep = "|")
+mu_datraw <- read.table("data-raw/sare_soils/JimFunke-Greene-Co/tabular/mapunit.txt", header = F, sep = "|")
 names(mu_datraw) <- names(read_csv("data-raw/sare_soils/SSURGO_mapunit-colnames.csv"))
 
 #--what map unit dominates the area?
@@ -165,7 +157,7 @@ mu_dat <-
   arrange(-wgt)
 
 # 2. water table depth and slopes from mapunit aggregate data (muaggatt)
-wtab_datraw <- read.table("data-raw/sare_soils/RobStout-Washington-Co/tabular/muaggatt.txt", header = F, sep = "|")
+wtab_datraw <- read.table("data-raw/sare_soils/JimFunke-Greene-Co/tabular/muaggatt.txt", header = F, sep = "|")
 names(wtab_datraw) <- names(read_csv("data-raw/sare_soils/SSURGO_muaggatt-colnames.csv"))
 
 wtab_dat <-
@@ -175,13 +167,10 @@ wtab_dat <-
 
 # 3. combine them
 
-rob <-
+jim <-
   mu_dat %>%
   left_join(wtab_dat) %>%
-  mutate(wgt_slope = wgt*slopegradwta,
-         wgt_wt = wgt*wtdepannmin) %>%
-  summarise(wgt_slope = sum(wgt_slope),
-            wgt_wtcm = sum(wgt_wt)) %>%
-  mutate_all(round, 2)
+  mutate(site_name = "West") %>%
+  select(site_name, wgt, muname, slopegradwta, wtdepannmin)
 
-rob %>% write_csv("data-raw/sare_soils/rob.csv")
+jim %>% write_csv("data-raw/sare_soils/jim.csv")

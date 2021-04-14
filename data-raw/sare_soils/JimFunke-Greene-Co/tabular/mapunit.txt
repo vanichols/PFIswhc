@@ -1,0 +1,5 @@
+"L138B"|"Clarion loam, Bemis moraine, 2 to 6 percent slopes"|"Consociation"||31199|||||||"All areas are prime farmland"|||||"Order 2"|88|||||"13674"|"2765528"
+"L55"|"Nicollet loam, 1 to 3 percent slopes"|"Consociation"||41752|||||||"All areas are prime farmland"|||||"Order 2"|91|||||"13674"|"2834838"
+"L107"|"Webster clay loam, Bemis moraine, 0 to 2 percent slopes"|"Consociation"||30968|||||||"Prime farmland if drained"|||||"Order 2"|88|||||"13674"|"2835017"
+"L138B2"|"Clarion loam, Bemis moraine, 2 to 6 percent slopes, moderately eroded"|"Consociation"||15319|||||||"All areas are prime farmland"|||||"Order 2"|85|||||"13674"|"2877281"
+"L507"|"Canisteo clay loam, Bemis moraine, 0 to 2 percent slopes"|"Consociation"||29475|||||||"Prime farmland if drained"|||||"Order 2"|87|||||"13674"|"2922024"
