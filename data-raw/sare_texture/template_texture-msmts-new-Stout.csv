@@ -1,0 +1,9 @@
+site_name,site_desc,sys_trt,crop_trt,cc_trt,rep,plot,code,textsamp_id,labeled
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,no,1,1,St-1no,1,
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,no,2,3,St-3no,3,
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,no,3,5,St-5no,6,
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,no,4,7,St-7no,4,
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,cc,1,2,St-2cc,2,
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,cc,2,4,St-4cc,5,
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,cc,3,6,St-6cc,7,
+Stout,"Rob Stout's farm in Washington Iowa, will be planted to soybean in 2019",gr,soy,cc,4,8,St-8cc,8,
