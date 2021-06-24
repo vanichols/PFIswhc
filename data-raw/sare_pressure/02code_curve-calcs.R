@@ -41,10 +41,6 @@ datraw <-
 
 # water -------------------------------------------------------------------
 
-# calc water content at saturation
-datraw %>%
-  mutate(w_0cm_g = ) %>%
-  select(plot_id, satsamp_g, satwater_g, w_0cm_g, everything())
 
 # calculate water amts (subtract cylinder wgts),
 
@@ -52,7 +48,7 @@ dat_water <-
   datraw %>%
     mutate(   ##--# calc actual amount of water released at each pressure
     w_0cm_g = satsamp_g - satwater_g - drysoil_g - ringpluscrap_g, #--added 5/6, is this right?
-    w_2.5cm_g = atm - cylinder_g + satwater_g,
+    w_3.8cm_g = atm - cylinder_g + satwater_g,
     w_10cm_g = `10_cm` - cylinder_g,
     w_25cm_g = `25_cm` - cylinder_g,
     w_50cm_g = `50_cm` - cylinder_g,
@@ -77,7 +73,7 @@ dat_water <-
 datraw %>%
   mutate(   ##--# calc actual amount of water released at each pressure
     w_0cm_g = satsamp_g - satwater_g - drysoil_g - ringpluscrap_g, #--added 5/6, is this right?
-    w_2.5cm_g = atm - cylinder_g + satwater_g,
+    w_3.8cm_g = atm - cylinder_g + satwater_g,
     w_10cm_g = `10_cm` - cylinder_g,
     w_25cm_g = `25_cm` - cylinder_g,
     w_50cm_g = `50_cm` - cylinder_g,
@@ -87,7 +83,7 @@ datraw %>%
     w_999cm_g = sampafter500_g - ringpluscrap_g - drysoil_g
   ) %>%
   select(plot_id, cell_nu, starts_with("w")) %>%
-    pivot_longer(w_2.5cm_g:w_999cm_g) %>%
+    pivot_longer(w_3.8cm_g:w_999cm_g) %>%
   group_by(plot_id, cell_nu, w_0cm_g) %>%
   mutate(cumval = cumsum(value)) %>%
     filter(name == "w_999cm_g") %>%
@@ -101,7 +97,7 @@ dat_water <-
   datraw %>%
     mutate(   ##--# calc actual amount of water released at each pressure
       w_0cm_g = satsamp_g - satwater_g - drysoil_g - ringpluscrap_g, #--added 5/6, is this right?
-      w_2.5cm_g = atm - cylinder_g + satwater_g,
+      w_3.8cm_g = atm - cylinder_g + satwater_g,
       w_10cm_g = `10_cm` - cylinder_g,
       w_25cm_g = `25_cm` - cylinder_g,
       w_50cm_g = `50_cm` - cylinder_g,
@@ -111,7 +107,7 @@ dat_water <-
       w_999cm_g = sampafter500_g - ringpluscrap_g - drysoil_g
     ) %>%
     select(plot_id, cell_nu, starts_with("w")) %>%
-    pivot_longer(w_2.5cm_g:w_999cm_g) %>%
+    pivot_longer(w_3.8cm_g:w_999cm_g) %>%
     group_by(plot_id, cell_nu, w_0cm_g) %>%
     mutate(cumval = cumsum(value),
            water_content_g = w_0cm_g - cumval) %>%
